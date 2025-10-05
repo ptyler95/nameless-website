@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nameless Consulting - SEO & Structured Data Experts</title>
+    <meta name="description" content="Nameless Consulting specializes in structured data implementation, SEO optimization, and website development to help brands appear in AI search results and traditional search engines.">
+    <meta name="keywords" content="structured data, SEO, ChatGPT visibility, AI search optimization, website development, e-commerce">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Nameless Consulting - SEO & Structured Data Experts">
+    <meta property="og:description" content="Make your brand visible in ChatGPT and AI search results with structured data implementation.">
+    <meta property="og:type" content="website">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --black: #1a1a1a;
+            --beige: #f5f2ed;
+            --forest-green: #2d4a3e;
+            --navy: #1e3a5f;
+            --orange: #e67e50;
+            --light-beige: #faf8f5;
+            --gray: #6b7280;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--black);
+            background-color: var(--light-beige);
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--light-beige);
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            background: rgba(250, 248, 245, 0.95);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 900;
+            letter-spacing: -0.05em;
+            color: var(--black);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--black);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--orange);
+        }
+
+        .nav-links a.active {
+            color: var(--forest-green);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            letter-spacing: -0.03em;
+        }
+
+        .hero h1 .highlight {
+            color: var(--forest-green);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--gray);
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--orange);
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 4px;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .cta-button:hover {
+            background: #d06840;
+            transform: translateY(-2px);
+        }
+
+        /* Services Section */
+        .services {
+            background: var(--beige);
+            padding: 5rem 2rem;
+        }
+
+        .services-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .services h2 {
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            font-weight: 900;
+            letter-spacing: -0.02em;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--forest-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--black);
+        }
+
+        .service-card p {
+            color: var(--gray);
+            line-height: 1.8;
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, var(--navy), var(--forest-green));
+            color: white;
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .stats h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            font-weight: 900;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--orange);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-weight: 900;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--black);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            padding: 0.75rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--forest-green);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Structured Data Page Specific Styles */
+        .page-hero {
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, var(--forest-green), var(--navy));
+            color: white;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            letter-spacing: -0.03em;
+        }
+
+        .page-hero p {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+
+        .content-section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .content-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            font-weight: 900;
+            color: var(--black);
+        }
+
+        .content-section h3 {
+            font-size: 1.75rem;
+            margin: 2rem 0 1rem;
+            color: var(--forest-green);
+        }
+
+        .content-section p {
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight-box {
+            background: var(--beige);
+            padding: 2rem;
+            border-left: 4px solid var(--orange);
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        .results-chart {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            margin: 2rem 0;
+        }
+
+        .chart-container {
+            height: 300px;
+            background: linear-gradient(to top, transparent, var(--beige));
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            padding: 1rem;
+            border-radius: 4px;
+        }
+
+        .chart-bar {
+            width: 60px;
+            background: var(--forest-green);
+            border-radius: 4px 4px 0 0;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .chart-bar:hover {
+            background: var(--orange);
+        }
+
+        .chart-bar span {
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.875rem;
+            white-space: nowrap;
+            color: var(--gray);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .benefit-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .benefit-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--orange);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--black);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--black);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 2rem;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .hero {
+                min-height: 50vh;
+                padding: 3rem 1rem;
+            }
+
+            .services-grid,
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .stats {
+                padding: 3rem 1rem;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .content-section {
+                padding: 2rem 1rem;
+            }
+
+            .chart-bar {
+                width: 40px;
+            }
+        }
+
+        /* Page visibility */
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        /* Success Message */
+        .success-message {
+            background: #10b981;
+            color: white;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-top: 1rem;
+            text-align: center;
+            display: none;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#home" class="logo">nameless</a>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link active" onclick="showPage('home')">Home</a></li>
+                <li><a href="#structured-data" class="nav-link" onclick="showPage('structured-data')">Structured Data</a></li>
+                <li><a href="#contact" class="nav-link" onclick="scrollToContact()">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home Page -->
+    <div id="home" class="page active">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Make Your Brand <span class="highlight">Visible</span> in ChatGPT & AI Search</h1>
+                <p>We help brands appear in AI-powered search results through strategic structured data implementation and modern SEO techniques.</p>
+                <a href="#contact" class="cta-button" onclick="scrollToContact()">Get Your Free Consultation</a>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services">
+            <div class="services-container">
+                <h2>Our Services</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">📊</div>
+                        <h3>Structured Data Implementation</h3>
+                        <p>Give AI models the right context about your brand and products. We implement schema markup that makes your content machine-readable and AI-friendly.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🔍</div>
+                        <h3>SEO Optimization</h3>
+                        <p>Beyond keywords, we focus on context and relevance. Our SEO strategies are designed for both traditional search engines and AI models.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">💻</div>
+                        <h3>Website Development</h3>
+                        <p>Beautiful, fast, and functional websites built with SEO and AI visibility in mind. From design to deployment, we handle everything.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🛍️</div>
+                        <h3>E-Commerce Solutions</h3>
+                        <p>Powerful online stores optimized for conversions and visibility. We build platforms that help you sell more effectively online.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">📱</div>
+                        <h3>Social Media Integration</h3>
+                        <p>Seamlessly connect your website with social platforms. Create a unified brand presence across all digital channels.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">✍️</div>
+                        <h3>Content Strategy</h3>
+                        <p>Content that converts visitors into customers. We craft compelling copy that resonates with both humans and AI algorithms.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats">
+            <div class="stats-container">
+                <h2>Proven Results</h2>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-number">30</span>
+                        <span class="stat-label">Days to AI Visibility</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">10+</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">85%</span>
+                        <span class="stat-label">Increase in Organic Traffic</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Client Satisfaction</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Structured Data Page -->
+    <div id="structured-data" class="page">
+        <section class="page-hero">
+            <h1>Structured Data Services</h1>
+            <p>Give AI models and search engines the context they need to understand and recommend your brand</p>
+        </section>
+
+        <section class="content-section">
+            <h2>The Challenge: AI Visibility</h2>
+            <div class="highlight-box">
+                <p><strong>The question we hear most:</strong> "My customers are using ChatGPT to explore and make their buying decisions. How can I make sure I show up?"</p>
+            </div>
+            <p>Traditional SEO isn't enough anymore. AI models don't just look for keywords – they need to understand the context and relationships between your content, products, and brand. This is where structured data becomes essential.</p>
+
+            <h3>What is Structured Data?</h3>
+            <p>Structured data is machine-readable information embedded directly into your website's HTML. It provides explicit context about your brand, products, and content that AI models and search engines can easily understand and use to generate rich, relevant results.</p>
+
+            <h3>Why Structured Data Works for AI</h3>
+            <p>LLMs and AI search tools rank information based on context and understanding, not just keyword density. Structured data acts as a direct line of communication with these systems, telling them exactly:</p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">✓</div>
+                    <div>
+                        <strong>What your business does</strong>
+                        <p>Clear categorization and service descriptions</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">✓</div>
+                    <div>
+                        <strong>Your product details</strong>
+                        <p>Prices, features, availability, and specifications</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">✓</div>
+                    <div>
+                        <strong>Your brand identity</strong>
+                        <p>Values, mission, and unique selling propositions</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">✓</div>
+                    <div>
+                        <strong>Customer reviews</strong>
+                        <p>Social proof and trust signals</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Expected Results Timeline</h3>
+            <div class="results-chart">
+                <h4 style="text-align: center; margin-bottom: 1rem;">AI Visibility Progress</h4>
+                <div class="chart-container">
+                    <div class="chart-bar" style="height: 20%"><span>Week 1</span></div>
+                    <div class="chart-bar" style="height: 35%"><span>Week 2</span></div>
+                    <div class="chart-bar" style="height: 60%"><span>Week 4</span></div>
+                    <div class="chart-bar" style="height: 85%"><span>Week 6</span></div>
+                    <div class="chart-bar" style="height: 95%"><span>Week 8</span></div>
+                </div>
+            </div>
+
+            <h3>Our Implementation Process</h3>
+            <p>We follow a proven methodology to ensure your structured data is implemented correctly and effectively:</p>
+            
+            <div style="margin: 2rem 0;">
+                <h4>1. Audit & Analysis</h4>
+                <p>We analyze your current website structure and identify opportunities for structured data implementation.</p>
+                
+                <h4>2. Schema Design</h4>
+                <p>We create comprehensive schema markup tailored to your business, including Organization, Product, Service, and LocalBusiness schemas as appropriate.</p>
+                
+                <h4>3. Implementation</h4>
+                <p>We embed the structured data directly into your website's HTML, ensuring it's properly formatted and validated.</p>
+                
+                <h4>4. Testing & Validation</h4>
+                <p>We use Google's Rich Results Test and Schema.org validators to ensure everything is working correctly.</p>
+                
+                <h4>5. Monitoring & Optimization</h4>
+                <p>We track your AI visibility and search performance, making adjustments as needed to maximize results.</p>
+            </div>
+
+            <div class="highlight-box">
+                <h3>Why Choose Nameless Consulting?</h3>
+                <ul style="margin-left: 1.5rem; line-height: 2;">
+                    <li>Over 10 years of experience in GTM, software development, and product management</li>
+                    <li>Proven results with brands achieving AI visibility in under 30 days</li>
+                    <li>Comprehensive approach covering both traditional SEO and AI optimization</li>
+                    <li>Turn-key solutions that require minimal effort from your team</li>
+                    <li>Ongoing support and optimization to maintain your competitive edge</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <!-- Contact Section (appears on both pages) -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <h2>Ready to Be Found by AI?</h2>
+            <p style="text-align: center; margin-bottom: 2rem; color: var(--gray);">
+                Get your free consultation and learn how we can make your brand visible in ChatGPT and other AI search tools.
+            </p>
+            <form class="contact-form" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Your Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="company">Company Name</label>
+                    <input type="text" id="company" name="company">
+                </div>
+                <div class="form-group">
+                    <label for="service">Service Interested In *</label>
+                    <select id="service" name="service" required>
+                        <option value="">Select a service...</option>
+                        <option value="structured-data">Structured Data Implementation</option>
+                        <option value="seo">SEO Optimization</option>
+                        <option value="website">Website Development</option>
+                        <option value="ecommerce">E-Commerce Solutions</option>
+                        <option value="all">Complete Digital Transformation</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Tell us about your project *</label>
+                    <textarea id="message" name="message" required placeholder="What challenges are you facing? What are your goals?"></textarea>
+                </div>
+                <button type="submit" class="cta-button">Send Message</button>
+                <div class="success-message" id="successMessage">
+                    Thank you for your message! We'll get back to you within 24 hours.
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <ul class="footer-links">
+                <li><a href="mailto:ethan@namelessconsulting.com">ethan@namelessconsulting.com</a></li>
+                <li><a href="mailto:preston@namelessconsulting.com">preston@namelessconsulting.com</a></li>
+            </ul>
+            <p>&copy; 2025 Nameless Consulting LLC. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Page navigation
+        function showPage(pageName) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+            
+            // Show selected page
+            document.getElementById(pageName).classList.add('active');
+            
+            // Update active nav link
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => link.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Close mobile menu if open
+            document.getElementById('navLinks').classList.remove('active');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Scroll to contact section
+        function scrollToContact() {
+            const contactSection = document.getElementById('contact');
+            contactSection.scrollIntoView({ behavior: 'smooth' });
+            
+            // Close mobile menu if open
+            document.getElementById('navLinks').classList.remove('active');
+        }
+
+        // Handle form submission
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData);
+            
+            // In a real implementation, you would send this data to a server
+            console.log('Form submission:', data);
+            
+            // Show success message
+            const successMessage = document.getElementById('successMessage');
+            successMessage.classList.add('show');
+            
+            // Reset form
+            event.target.reset();
+            
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                successMessage.classList.remove('show');
+            }, 5000);
+        }
+
+        // Add smooth scroll behavior for all anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#home' && href !== '#structured-data') {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const nav = document.querySelector('nav');
+            const navLinks = document.getElementById('navLinks');
+            const menuToggle = document.querySelector('.mobile-menu-toggle');
+            
+            if (!nav.contains(event.target) && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
